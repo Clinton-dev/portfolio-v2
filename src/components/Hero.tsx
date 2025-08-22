@@ -1,9 +1,12 @@
 import CodeWindow from "./CodeWindow.tsx";
-// import {Github, Linkedin, Mail, Twitter} from "lucide";
-import { Github, Linkedin, Mail, Twitter, ExternalLink, Code } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 
-const Hero = () => {
+const Hero: React.FC = () => {
+    const scrollTo = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <section className="hero">
             <div className="hero-container">
@@ -17,13 +20,13 @@ const Hero = () => {
                     <div className="hero-buttons">
                         <button
                             className="btn btn-primary"
-                            onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => scrollTo('work')}
                         >
                             View My Work
                         </button>
                         <button
                             className="btn btn-secondary"
-                            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                            onClick={() => scrollTo('contact')}
                         >
                             Let's Talk
                         </button>

@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 
 const CodeWindow = () => {
     const [currentLine, setCurrentLine] = useState(0);
-    const [isTyping, setIsTyping] = useState(true);
 
     const codeLines = [
         { text: 'const developer = {', delay: 0 },
@@ -32,7 +31,7 @@ const CodeWindow = () => {
         return () => clearTimeout(timer);
     }, [currentLine, codeLines]);
 
-    const formatCodeLine = (text) => {
+    const formatCodeLine = (text: string):string => {
         return text
             .replace(/(const|return)/g, '<span class="keyword">$1</span>')
             .replace(/"([^"]*)"/g, '<span class="string">"$1"</span>')

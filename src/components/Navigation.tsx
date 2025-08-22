@@ -1,16 +1,18 @@
-// Navigation Component
+// import {useState} from "react";
 
-import {useState} from "react";
+interface NavigationProps {
+    scrolled: boolean;
+}
 
-const Navigation = ({ scrolled }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const scrollToSection = (sectionId) => {
+    const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
-        setIsMenuOpen(false);
+        // setIsMenuOpen(false);
     };
 
     return (

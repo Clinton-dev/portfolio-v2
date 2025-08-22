@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Github, Linkedin, Mail, Twitter} from "lucide-react";
+import {Github, Linkedin, Mail} from "lucide-react";
 
 const Contact = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +25,7 @@ const Contact = () => {
         return () => observer.disconnect();
     }, []);
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -33,7 +33,7 @@ const Contact = () => {
         }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -124,7 +124,7 @@ const Contact = () => {
                     required
                     className="form-input form-textarea"
                     placeholder=" "
-                    rows="5"
+                    rows={5}
                 ></textarea>
                                 <label className="form-label">Your Message</label>
                             </div>

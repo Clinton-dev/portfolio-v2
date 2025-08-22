@@ -1,7 +1,13 @@
 import {useEffect, useState} from "react";
 
+type Particle = {
+    id: number;
+    left: number;
+    animationDuration: number;
+};
+
 const FloatingParticles = () => {
-    const [particles, setParticles] = useState([]);
+    const [particles, setParticles] = useState<Particle[]>([]);
 
     useEffect(() => {
         const interval = setInterval(() => {

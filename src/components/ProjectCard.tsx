@@ -1,7 +1,18 @@
 import {ExternalLink} from "lucide-react";
 import {useState} from "react";
 
-const ProjectCard = ({ project, index }) => {
+interface Project {
+    title: string;
+    description: string;
+    technologies: string[];
+}
+
+interface ProjectCardProps {
+    project: Project;
+    index: number;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
