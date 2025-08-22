@@ -49,8 +49,6 @@ const Contact = () => {
         }, 2000);
     };
 
-    const currentYear = new Date().getFullYear();
-
     return (
         <section className={`contact ${isVisible ? 'visible' : ''}`} id="contact">
             <div className="contact-container">
@@ -149,20 +147,6 @@ const Contact = () => {
                                 </div>
                             )}
                         </form>
-                    </div>
-                </div>
-
-                <div className="footer">
-                    <div className="footer-content">
-                        <div className="footer-left">
-                            <div className="footer-logo">Clinton Wambugu</div>
-                            <p className="footer-tagline">Fullstack Developer & Cloud Enthusiast</p>
-                        </div>
-
-                        <div className="footer-right">
-                            <p>&copy; {currentYear} Clinton Wambugu. All rights reserved.</p>
-                            <p>Built with React & passion in Nairobi, Kenya 🇰🇪</p>
-                        </div>
                     </div>
                 </div>
             </div>
