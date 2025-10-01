@@ -5,6 +5,7 @@ interface Project {
     title: string;
     description: string;
     technologies: string[];
+    url?: string;
 }
 
 interface ProjectCardProps {
@@ -15,11 +16,18 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     const [isHovered, setIsHovered] = useState(false);
 
+    const handleClick = () => {
+        if (project.url) {
+            window.open(project.url, "_blank", "noopener,noreferrer");
+        }
+    };
+
     return (
         <div
             className="project-card"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={() => { handleClick()}}
             style={{
                 animationDelay: `${index * 0.2}s`
             }}
