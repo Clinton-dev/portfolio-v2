@@ -1,15 +1,15 @@
 import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 
-type ProjectType = "Website" | "E-commerce" | "Web App" | "SaaS/EaaS";
-type TechCategory = "frontend" | "backend" | "devops" | "tools";
+export type ProjectType = "Website" | "E-commerce" | "Web App" | "SaaS/EaaS";
+export type TechCategory = "frontend" | "backend" | "devops" | "tools";
 
-interface Technology {
+export interface Technology {
     name: string;
     category: TechCategory;
 }
 
-interface Project {
+export interface Project {
     title: string;
     description: string;
     technologies: Technology[];

@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import ProjectCard from "./ProjectCard.tsx";
+import ProjectCard, { type Project } from "./ProjectCard.tsx";
 import CymelleScreenshot from '../assets/cymelle.png';
 import CentipidAccess from '../assets/centipid-access.png';
 import CentipidTechnologies from '../assets/centipidtechnologies.png';
-import Yasil from '../assets/yasil.png';
 import YasilLanding from '../assets/yasil-landing.png';
 import Acelitigator from '../assets/acelitigator.png';
 
 const Projects = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const projects = [
+    const projects: Project[] = [
         {
             title: "Cymelle Technologies",
             description: "A modern, responsive website built for Cymelle, a company offering Equipment-as-a-Service (EaaS) solutions. The site showcases Cymelle's services with a clean design, optimized performance, and intuitive user experience, ensuring accessibility across all devices.",
