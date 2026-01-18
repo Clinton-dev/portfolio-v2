@@ -4,6 +4,7 @@ import CymelleScreenshot from '../assets/cymelle.png';
 import CentipidAccess from '../assets/centipid-access.png';
 import CentipidTechnologies from '../assets/centipidtechnologies.png';
 import Yasil from '../assets/yasil.png';
+import YasilLanding from '../assets/yasil-landing.png';
 import Acelitigator from '../assets/acelitigator.png';
 
 const Projects = () => {
@@ -53,7 +54,7 @@ const Projects = () => {
                 { name: "Google Analytics", category: "tools" },
             ],
             url: "https://yasil.co.ke/",
-            screenshot: Yasil,
+            screenshot: YasilLanding,
             type: "Web App",
         },
         {

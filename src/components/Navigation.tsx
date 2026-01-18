@@ -1,5 +1,3 @@
-// import {useState} from "react";
-// import ClintLogo from '../assets/Clint-logo.png';
 import ClintLogo from '../assets/clint-favicon.png';
 
 interface NavigationProps {
