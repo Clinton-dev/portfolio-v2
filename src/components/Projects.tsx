@@ -72,7 +72,7 @@ const Projects = () => {
                 { name: "SEO", category: "tools" },
                 { name: "Google Analytics", category: "tools" },
             ],
-            url: "https://centipidaccess.com/",
+            url: "https://access.centipidtechnologies.com/",
             screenshot: CentipidAccess,
             type: "Web App",
         },
@@ -105,6 +105,11 @@ const Projects = () => {
     ];
 
     useEffect(() => {
+        if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+            setIsVisible(true);
+            return;
+        }
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
