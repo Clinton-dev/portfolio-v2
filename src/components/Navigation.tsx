@@ -1,6 +1,6 @@
 // import {useState} from "react";
 // import ClintLogo from '../assets/Clint-logo.png';
-import ClintLogo from '../assets/Clint-logo.png';
+import ClintLogo from '../assets/clint-favicon.png';
 
 interface NavigationProps {
     scrolled: boolean;
@@ -21,7 +21,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrolled }) => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-container">
                 <div className="logo">
-                    <img src={ClintLogo} alt="logo" className='h-5 w-5'/>
+                    <img src={ClintLogo} alt="logo" className='h-16 w-16'/>
                 </div>
                 <ul className="nav-links">
                     <li><button onClick={() => scrollToSection('about')}>About</button></li>
