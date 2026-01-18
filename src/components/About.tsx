@@ -5,9 +5,9 @@ const About = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const skills = {
-        frontend: ["HTML","JavaScript", "CSS", "SASS", "Tailwind","Context API", "Redux", "React", "Next.js"],
-        backend: ["Python", "Django", "Flask"],
-        cloud: ["Nginx", "Docker", "Kubernetes", "Bash Scripting", "AWS", "Ansible", "Linux", "Automation"]
+        frontend: ["HTML","JavaScript", "Typescript", "CSS", "SASS", "Tailwind","Context API", "Redux", "React", "Next.js"],
+        backend: ["Python", "Django", "Flask", "PHP", 'Laravel'],
+        cloud: ["Wordpress","Nginx", "Docker", "Kubernetes", "Bash Scripting", "AWS", "Ansible", "Linux Administration", "Automation", "CloudFlare", "Zabbix", "Github Actions"]
     };
 
     useEffect(() => {

@@ -1,3 +1,5 @@
+import ClintFooterLogo from '../assets/Clint-logo.png';
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     
@@ -5,7 +7,9 @@ const Footer = () => {
         <div className="footer">
         <div className="footer-content">
             <div className="footer-left">
-                <div className="footer-logo">Clinton Wambugu</div>
+                <div className="footer-logo">
+                    <img src={ClintFooterLogo} alt="Clinton Wambugu Logo" className="h-26 w-26" />
+                </div>
                 <p className="footer-tagline">Fullstack Developer & Cloud Enthusiast</p>
             </div>
 

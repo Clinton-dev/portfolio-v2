@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard.tsx";
 import CymelleScreenshot from '../assets/cymelle.png';
 import CentipidAccess from '../assets/centipid-access.png';
@@ -12,49 +12,96 @@ const Projects = () => {
     const projects = [
         {
             title: "Cymelle Technologies",
-            description: "A modern, responsive website built for Cymelle, a company offering Equipment-as-a-Service (EaaS) solutions. The site showcases Cymelle’s services with a clean design, optimized performance, and intuitive user experience, ensuring accessibility across all devices.",
-            technologies: ["React.js", "Tailwind CSS", "Vite", "JavaScript"],
+            description: "A modern, responsive website built for Cymelle, a company offering Equipment-as-a-Service (EaaS) solutions. The site showcases Cymelle's services with a clean design, optimized performance, and intuitive user experience, ensuring accessibility across all devices.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "JavaScript", category: "frontend" },
+            ],
             url: "https://cymelle.com/",
-            screenShot: CymelleScreenshot,
-        },{
+            screenshot: CymelleScreenshot,
+            type: "SaaS/EaaS",
+        },
+        {
             title: "Centipid Technologies",
-            description: "A modern, responsive website built for Cymelle, a company offering Equipment-as-a-Service (EaaS) solutions. The site showcases Cymelle’s services with a clean design, optimized performance, and intuitive user experience, ensuring accessibility across all devices.",
-            technologies: ["React.js", "Tailwind CSS", "Vite", "JavaScript"],
-            url: "https://cymelle.com/",
-            screenShot: CentipidTechnologies,
+            description: "A modern, responsive website built for Centipid, offering comprehensive network management solutions. Built with React and deployed on Nginx with full backend infrastructure. Includes server setup, database configuration, monitoring & alerts, and SEO optimization for optimal performance and user experience.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "Laravel", category: "backend" },
+                { name: "Nginx", category: "devops" },
+                { name: "Database Setup", category: "devops" },
+                { name: "Monitoring & Alerts", category: "devops" },
+                { name: "SEO", category: "tools" },
+            ],
+            url: "https://centipidtechnologies.com/",
+            screenshot: CentipidTechnologies,
+            type: "Website",
         },
         {
             title: "Yasil Ride Hailing Platform",
-            description: "A sleek and modern web built for Yasil, a Nairobi-based ride-hailing platform. The site highlights Yasil’s cutting-edge services with an elegant design, responsive layout, and smooth user experience, optimized for both desktop and mobile visitors.",
-            technologies: ["React.js", "Tailwind CSS", "Vite", "JavaScript"],
+            description: "A sleek and modern web application for Yasil, a Nairobi-based ride-hailing platform. Features elegant design with cutting-edge backend infrastructure including Nginx server setup, database configuration, and comprehensive monitoring with alerts for reliability and performance.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "Nginx", category: "devops" },
+                { name: "Database Setup", category: "devops" },
+                { name: "Monitoring & Alerts", category: "devops" },
+                { name: "Google Analytics", category: "tools" },
+            ],
             url: "https://yasil.co.ke/",
-            screenShot: Yasil,
+            screenshot: Yasil,
+            type: "Web App",
         },
         {
             title: "Centipid Access",
-            description: "A modern, responsive website built for Cymelle, a company offering Equipment-as-a-Service (EaaS) solutions. The site showcases Cymelle’s services with a clean design, optimized performance, and intuitive user experience, ensuring accessibility across all devices.",
-            technologies: ["React.js", "Tailwind CSS", "Vite", "JavaScript"],
-            url: "https://cymelle.com/",
-            screenShot: CentipidAccess,
+            description: "A secure web application providing access management and network solutions. Features advanced security with Cloudflare Turnstile verification, Laravel backend with contact form automation using Resend for email delivery, Nginx deployment with CI/CD automation, and comprehensive Zabbix monitoring with performance alerts.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "Laravel", category: "backend" },
+                { name: "Resend", category: "backend" },
+                { name: "Cloudflare Turnstile", category: "tools" },
+                { name: "Nginx", category: "devops" },
+                { name: "GitHub Actions", category: "devops" },
+                { name: "Zabbix Monitoring", category: "devops" },
+                { name: "SEO", category: "tools" },
+                { name: "Google Analytics", category: "tools" },
+            ],
+            url: "https://centipidaccess.com/",
+            screenshot: CentipidAccess,
+            type: "Web App",
         },
         {
-            title: "Netduka Ecommerce as a Service(EAAS) Platform",
-            description: "A responsive web page built for Netduka to streamline driver onboarding and rider detail capture. Features intuitive form design, validation, and a user-friendly interface that ensures smooth data collection across devices.",
-            technologies: ["React.js", "Tailwind CSS", "Vite", "JavaScript"],
-            screenShot: CymelleScreenshot,
+            title: "Netduka E-commerce Platform",
+            description: "A responsive e-commerce platform built for Netduka as an Equipment-as-a-Service solution. Includes full backend infrastructure with Nginx server setup, database configuration, and monitoring with alerts for seamless transaction processing and optimal performance.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "SASS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "Nginx", category: "devops" },
+                { name: "Database Setup", category: "devops" },
+                { name: "Monitoring & Alerts", category: "devops" },
+            ],
+            screenshot: CymelleScreenshot,
+            type: "E-commerce",
         },
         {
             title: "AceLitigator Platform",
             description: "A legal services platform that provides Kenyans with access to customizable legal documents and online consultations. The site features a modern, responsive interface designed for ease of navigation, helping users quickly find and generate the legal resources they need.",
-            technologies: ["Wordpress", "Php", "Nginx"],
+            technologies: [
+                { name: "WordPress", category: "backend" },
+                { name: "PHP", category: "backend" },
+                { name: "Nginx", category: "devops" },
+            ],
             url: "https://acelitigator.co.ke",
-            screenShot: Acelitigator,
+            screenshot: Acelitigator,
+            type: "Website",
         },
-        // {
-        //     title: "Next Project",
-        //     description: "Currently working on an exciting new project that will showcase advanced fullstack development skills. Stay tuned for updates!",
-        //     technologies: ["React", "Node.js", "MongoDB"]
-        // }
     ];
 
     useEffect(() => {
