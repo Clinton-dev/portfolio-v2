@@ -1,5 +1,3 @@
-// import './App.css'
-
 import {useEffect, useState} from "react";
 import FloatingParticles from "./components/FloatingParticles.tsx";
 import Navigation from "./components/Navigation.tsx";
@@ -8,6 +6,7 @@ import Projects from "./components/Projects.tsx";
 import About from "./components/About.tsx";
 import Contact from "./components/Contact.tsx";
 import Footer from "./components/Footer.tsx";
+import useAnalytics from "./useAnalytics.ts";
 
 function App() {
     useAnalytics();
