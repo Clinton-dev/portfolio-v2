@@ -1,7 +1,10 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState, useRef} from "react";
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import {Github, Linkedin, Mail} from "lucide-react";
 
 const Contact = () => {
+    const turnstileRef = useRef<TurnstileInstance>(null);
+
     const [isVisible, setIsVisible] = useState(false);
     const [formData, setFormData] = useState({
         username: '',
@@ -10,6 +13,7 @@ const Contact = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState('');
+    const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
     const rawSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
     const siteKey = typeof rawSiteKey === 'string' ? rawSiteKey : '';
 
@@ -132,8 +136,11 @@ const Contact = () => {
                             </div>
 
                             {siteKey ? (
-                                <div className="pt-2">
+                                <div className="my-4">
                                     <Turnstile
+                                        options={{
+                                            size: 'flexible',
+                                        }}
                                         ref={turnstileRef}
                                         siteKey={siteKey}
                                         onSuccess={(token) => setTurnstileToken(token)}
