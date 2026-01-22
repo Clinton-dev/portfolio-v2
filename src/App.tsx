@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import { Analytics } from "@vercel/analytics/next"
 import FloatingParticles from "./components/FloatingParticles.tsx";
 import Navigation from "./components/Navigation.tsx";
 import Hero from "./components/Hero.tsx";
@@ -31,6 +32,7 @@ function App() {
         <Projects />
         <Contact />
         <Footer />
+        <Analytics />
     </div>
   )
 }
