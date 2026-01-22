@@ -10,13 +10,15 @@ const Contact = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState('');
+    const rawSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+    const siteKey = typeof rawSiteKey === 'string' ? rawSiteKey : '';
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setIsVisible(entry.isIntersecting);
             },
-            { threshold: 0.1 }
+            {threshold: 0.1}
         );
 
         const section = document.getElementById('contact');
@@ -25,8 +27,8 @@ const Contact = () => {
         return () => observer.disconnect();
     }, []);
 
-    const handleInputChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const {name, value} = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -42,7 +44,7 @@ const Contact = () => {
             setSubmitStatus('success');
             setIsSubmitting(false);
             // Reset form
-            setFormData({ username: '', email: '', message: '' });
+            setFormData({username: '', email: '', message: ''});
 
             // Reset status after 3 seconds
             setTimeout(() => setSubmitStatus(''), 3000);
@@ -62,7 +64,7 @@ const Contact = () => {
 
                         <div className="contact-details">
                             <div className="contact-item">
-                                <Mail className="contact-icon" />
+                                <Mail className="contact-icon"/>
                                 <div>
                                     <h4>Email</h4>
                                     <p>clintonwambugu@gmail.com</p>
@@ -70,7 +72,7 @@ const Contact = () => {
                             </div>
 
                             <div className="contact-item">
-                                <Github className="contact-icon" />
+                                <Github className="contact-icon"/>
                                 <div>
                                     <h4>GitHub</h4>
                                     <p>github.com/Clinton-dev</p>
@@ -78,7 +80,7 @@ const Contact = () => {
                             </div>
 
                             <div className="contact-item">
-                                <Linkedin className="contact-icon" />
+                                <Linkedin className="contact-icon"/>
                                 <div>
                                     <h4>LinkedIn</h4>
                                     <p>linkedin.com/in/clintonwambugu</p>
@@ -117,35 +119,50 @@ const Contact = () => {
                             </div>
 
                             <div className="form-group">
-                <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    className="form-input form-textarea"
-                    placeholder=" "
-                    rows={5}
-                ></textarea>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    required
+                                    className="form-input form-textarea"
+                                    placeholder=" "
+                                    rows={5}
+                                ></textarea>
                                 <label className="form-label">Your Message</label>
                             </div>
 
-                            <button
-                                type="submit"
-                                className="form-submit"
-                                disabled={isSubmitting}
-                            >
-                                {isSubmitting ? (
-                                    <div className="loading-spinner"></div>
-                                ) : (
-                                    'Send Message'
-                                )}
-                            </button>
-
-                            {submitStatus === 'success' && (
-                                <div className="submit-success">
-                                    ✨ Message sent successfully! I'll get back to you soon.
+                            {siteKey ? (
+                                <div className="pt-2">
+                                    <Turnstile
+                                        ref={turnstileRef}
+                                        siteKey={siteKey}
+                                        onSuccess={(token) => setTurnstileToken(token)}
+                                        onExpire={() => setTurnstileToken(null)}
+                                        onError={() => setTurnstileToken(null)}
+                                    />
                                 </div>
-                            )}
+                            ) : null}
+
+                            <div>
+
+                                <button
+                                    type="submit"
+                                    className="form-submit"
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? (
+                                        <div className="loading-spinner"></div>
+                                    ) : (
+                                        'Send Message'
+                                    )}
+                                </button>
+
+                                {submitStatus === 'success' && (
+                                    <div className="submit-success">
+                                        ✨ Message sent successfully! I'll get back to you soon.
+                                    </div>
+                                )}
+                            </div>
                         </form>
                     </div>
                 </div>
