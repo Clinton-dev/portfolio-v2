@@ -10,6 +10,7 @@ import Contact from "./components/Contact.tsx";
 import Footer from "./components/Footer.tsx";
 
 function App() {
+    useAnalytics();
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
