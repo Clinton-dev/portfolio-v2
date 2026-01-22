@@ -19,8 +19,8 @@ function initGtag(): Promise<void> {
             window.dataLayer = [];
         }
         if (!window.gtag) {
-            window.gtag = function gtag() {
-                window.dataLayer?.push(arguments);
+            window.gtag = function gtag(...args: unknown[]) {
+                window.dataLayer?.push(args);
             };
         }
 
@@ -63,7 +63,6 @@ export default function useAnalytics(options: AnalyticsOptions = {}) {
             .catch((error) => {
                 if (debug) {
                     // Optional debug logging without breaking the app.
-                    // eslint-disable-next-line no-console
                     console.warn("GA failed to load:", error);
                 }
             });
