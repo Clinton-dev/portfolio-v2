@@ -5,57 +5,12 @@ import CentipidAccess from '../assets/centipid-access.png';
 import CentipidTechnologies from '../assets/centipidtechnologies.png';
 import YasilLanding from '../assets/yasil-landing.png';
 import Acelitigator from '../assets/acelitigator.png';
+import CFS from '../assets/cfs.png';
 
 const Projects = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const projects: Project[] = [
-        {
-            title: "Cymelle Technologies",
-            description: "A modern, responsive website built for Cymelle, a company offering Equipment-as-a-Service (EaaS) solutions. The site showcases Cymelle's services with a clean design, optimized performance, and intuitive user experience, ensuring accessibility across all devices.",
-            technologies: [
-                { name: "React.js", category: "frontend" },
-                { name: "Tailwind CSS", category: "frontend" },
-                { name: "Vite", category: "frontend" },
-                { name: "JavaScript", category: "frontend" },
-            ],
-            url: "https://cymelle.com/",
-            screenshot: CymelleScreenshot,
-            type: "SaaS/EaaS",
-        },
-        {
-            title: "Centipid Technologies",
-            description: "A modern, responsive website built for Centipid, offering comprehensive network management solutions. Built with React and deployed on Nginx with full backend infrastructure. Includes server setup, database configuration, monitoring & alerts, and SEO optimization for optimal performance and user experience.",
-            technologies: [
-                { name: "React.js", category: "frontend" },
-                { name: "Tailwind CSS", category: "frontend" },
-                { name: "Vite", category: "frontend" },
-                { name: "Laravel", category: "backend" },
-                { name: "Nginx", category: "devops" },
-                { name: "Database Setup", category: "devops" },
-                { name: "Monitoring & Alerts", category: "devops" },
-                { name: "SEO", category: "tools" },
-            ],
-            url: "https://centipidtechnologies.com/",
-            screenshot: CentipidTechnologies,
-            type: "Website",
-        },
-        {
-            title: "Yasil Ride Hailing Platform",
-            description: "A sleek and modern web application for Yasil, a Nairobi-based ride-hailing platform. Features elegant design with cutting-edge backend infrastructure including Nginx server setup, database configuration, and comprehensive monitoring with alerts for reliability and performance.",
-            technologies: [
-                { name: "React.js", category: "frontend" },
-                { name: "Tailwind CSS", category: "frontend" },
-                { name: "Vite", category: "frontend" },
-                { name: "Nginx", category: "devops" },
-                { name: "Database Setup", category: "devops" },
-                { name: "Monitoring & Alerts", category: "devops" },
-                { name: "Google Analytics", category: "tools" },
-            ],
-            url: "https://yasil.co.ke/",
-            screenshot: YasilLanding,
-            type: "Web App",
-        },
         {
             title: "Centipid Access",
             description: "A secure web application providing access management and network solutions. Features advanced security with Cloudflare Turnstile verification, Laravel backend with contact form automation using Resend for email delivery, Nginx deployment with CI/CD automation, and comprehensive Zabbix monitoring with performance alerts.",
@@ -77,8 +32,68 @@ const Projects = () => {
             type: "Web App",
         },
         {
+            title: "Centipid Technologies",
+            description: "A modern, responsive website built for Centipid, offering comprehensive network management solutions. Built with React and deployed on Nginx with full backend infrastructure. Includes server setup, database configuration, monitoring & alerts, and SEO optimization for optimal performance and user experience.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "Laravel", category: "backend" },
+                { name: "Nginx", category: "devops" },
+                { name: "Database Setup", category: "devops" },
+                { name: "Monitoring & Alerts", category: "devops" },
+                { name: "SEO", category: "tools" },
+            ],
+            url: "https://centipidtechnologies.com/",
+            screenshot: CentipidTechnologies,
+            type: "Web App",
+        },
+        {
+            title: "Cloud Force Sky",
+            description: "A polished, responsive site for CloudForceSky, a nonprofit community helping people learn cloud skills. It emphasizes mentorship, shared resources, and partner support like Resource Cloud Academy to accelerate careers.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "SEO", category: "tools" },
+            ],
+            url: "https://website-frontend-c14d25.gitlab.io/",
+            screenshot: CFS,
+            type: "Website",
+        },
+        {
+            title: "Cymelle Technologies",
+            description: "A modern, responsive website built for Cymelle, a company that helps businesses launch and scale eCommerce‑as‑a‑Service—blending mobile and web apps, personalized shopping features, and automation that saves time and reduces costs.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "JavaScript", category: "frontend" },
+            ],
+            url: "https://cymelle.com/",
+            screenshot: CymelleScreenshot,
+            type: "SaaS/EaaS",
+        },
+        {
+            title: "Yasil Ride Hailing Platform",
+            description: "A sleek and modern web application for Yasil, a Nairobi-based ride-hailing platform. Features elegant design with cutting-edge backend infrastructure including Nginx server setup, database configuration, and comprehensive monitoring with alerts for reliability and performance.",
+            technologies: [
+                { name: "React.js", category: "frontend" },
+                { name: "Tailwind CSS", category: "frontend" },
+                { name: "Vite", category: "frontend" },
+                { name: "Twilio Paste", category: "frontend" },
+                { name: "Nginx", category: "devops" },
+                { name: "Database Setup", category: "devops" },
+                { name: "Monitoring & Alerts", category: "devops" },
+                { name: "Google Analytics", category: "tools" },
+            ],
+            url: "https://yasil.co.ke/",
+            screenshot: YasilLanding,
+            type: "SaaS/EaaS",
+        },
+        {
             title: "Netduka E-commerce Platform",
-            description: "A responsive e-commerce platform built for Netduka as an Equipment-as-a-Service solution. Includes full backend infrastructure with Nginx server setup, database configuration, and monitoring with alerts for seamless transaction processing and optimal performance.",
+            description: "A responsive platform built for Netduka an e-commerce-as-a-Service solution. Includes full backend infrastructure with Nginx server setup, database configuration, and monitoring with alerts for seamless transaction processing and optimal performance.",
             technologies: [
                 { name: "React.js", category: "frontend" },
                 { name: "SASS", category: "frontend" },
@@ -88,7 +103,7 @@ const Projects = () => {
                 { name: "Monitoring & Alerts", category: "devops" },
             ],
             screenshot: CymelleScreenshot,
-            type: "E-commerce",
+            type: "SaaS/EaaS",
         },
         {
             title: "AceLitigator Platform",
@@ -100,7 +115,7 @@ const Projects = () => {
             ],
             url: "https://acelitigator.co.ke",
             screenshot: Acelitigator,
-            type: "Website",
+            type: "E-commerce",
         },
     ];
 
